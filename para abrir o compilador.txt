@@ -1,0 +1,6 @@
+para abrir o compilador
+
+$ auto-py-to-exe
+
+
+$ pip install auto-py-to-exe

@@ -1,0 +1,434 @@
+[
+    {
+        "label": "pygame",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame",
+        "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "kind": 6,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "class Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20\n    def move(self, direction):\n        if direction == \"left\":\n            self.x -= PLAYER_SPEED\n        elif direction == \"right\":\n            self.x += PLAYER_SPEED\n        self.x = max(0, min(self.x, WIDTH - PLAYER_SIZE))",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "Obstacle",
+        "kind": 6,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "class Obstacle:\n    def __init__(self):\n        self.x = random.randint(0, WIDTH - OBSTACLE_SIZE)\n        self.y = 0\n    def move(self):\n        self.y += OBSTACLE_SPEED\n    def draw(self):\n        pygame.draw.rect(screen, RED, (self.x, self.y, OBSTACLE_SIZE, OBSTACLE_SIZE))\ndef main():\n    player = Player()",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "def main():\n    player = Player()\n    obstacles = []\n    running = True\n    while running:\n        for event in pygame.event.get():\n            if event.type == pygame.QUIT:\n                running = False\n        keys = pygame.key.get_pressed()\n        if keys[pygame.K_LEFT]:",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "PLAYER_SIZE",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "PLAYER_SIZE = 50\nOBSTACLE_SIZE = 30\nPLAYER_SPEED = 5\nOBSTACLE_SPEED = 3\n# Cores\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "OBSTACLE_SIZE",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "OBSTACLE_SIZE = 30\nPLAYER_SPEED = 5\nOBSTACLE_SPEED = 3\n# Cores\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Dodging Game\")",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "PLAYER_SPEED",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "PLAYER_SPEED = 5\nOBSTACLE_SPEED = 3\n# Cores\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Dodging Game\")\nclock = pygame.time.Clock()",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "OBSTACLE_SPEED",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "OBSTACLE_SPEED = 3\n# Cores\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Dodging Game\")\nclock = pygame.time.Clock()\n# Classe para o jogador",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Dodging Game\")\nclock = pygame.time.Clock()\n# Classe para o jogador\nclass Player:\n    def __init__(self):",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "BLACK",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Dodging Game\")\nclock = pygame.time.Clock()\n# Classe para o jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "RED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Dodging Game\")\nclock = pygame.time.Clock()\n# Classe para o jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "screen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Dodging Game\")\nclock = pygame.time.Clock()\n# Classe para o jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20\n    def move(self, direction):\n        if direction == \"left\":",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "blocos",
+        "description": "blocos",
+        "peekOfCode": "clock = pygame.time.Clock()\n# Classe para o jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20\n    def move(self, direction):\n        if direction == \"left\":\n            self.x -= PLAYER_SPEED\n        elif direction == \"right\":",
+        "detail": "blocos",
+        "documentation": {}
+    },
+    {
+        "label": "draw_snake",
+        "kind": 2,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "def draw_snake(snake):\n    for segment in snake:\n        pygame.draw.rect(screen, GREEN, pygame.Rect(*segment, 10, 10))\n# Função principal\ndef main():\n    snake = [(100, 50), (90, 50), (80, 50)]\n    snake_dir = (10, 0)\n    food = (random.randrange(0, WIDTH, 10), random.randrange(0, HEIGHT, 10))\n    running = True\n    while running:",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "def main():\n    snake = [(100, 50), (90, 50), (80, 50)]\n    snake_dir = (10, 0)\n    food = (random.randrange(0, WIDTH, 10), random.randrange(0, HEIGHT, 10))\n    running = True\n    while running:\n        for event in pygame.event.get():\n            if event.type == pygame.QUIT:\n                running = False\n        keys = pygame.key.get_pressed()",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "kind": 5,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "FPS = 10\n# Cores\nWHITE = (255, 255, 255)\nGREEN = (0, 255, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Snake Game\")\nclock = pygame.time.Clock()\n# Função para desenhar a cobra",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "kind": 5,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "WHITE = (255, 255, 255)\nGREEN = (0, 255, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Snake Game\")\nclock = pygame.time.Clock()\n# Função para desenhar a cobra\ndef draw_snake(snake):\n    for segment in snake:",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "GREEN",
+        "kind": 5,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "GREEN = (0, 255, 0)\nRED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Snake Game\")\nclock = pygame.time.Clock()\n# Função para desenhar a cobra\ndef draw_snake(snake):\n    for segment in snake:\n        pygame.draw.rect(screen, GREEN, pygame.Rect(*segment, 10, 10))",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "kind": 5,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "RED = (255, 0, 0)\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Snake Game\")\nclock = pygame.time.Clock()\n# Função para desenhar a cobra\ndef draw_snake(snake):\n    for segment in snake:\n        pygame.draw.rect(screen, GREEN, pygame.Rect(*segment, 10, 10))\n# Função principal",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "screen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"Snake Game\")\nclock = pygame.time.Clock()\n# Função para desenhar a cobra\ndef draw_snake(snake):\n    for segment in snake:\n        pygame.draw.rect(screen, GREEN, pygame.Rect(*segment, 10, 10))\n# Função principal\ndef main():\n    snake = [(100, 50), (90, 50), (80, 50)]",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "cobrinha",
+        "description": "cobrinha",
+        "peekOfCode": "clock = pygame.time.Clock()\n# Função para desenhar a cobra\ndef draw_snake(snake):\n    for segment in snake:\n        pygame.draw.rect(screen, GREEN, pygame.Rect(*segment, 10, 10))\n# Função principal\ndef main():\n    snake = [(100, 50), (90, 50), (80, 50)]\n    snake_dir = (10, 0)\n    food = (random.randrange(0, WIDTH, 10), random.randrange(0, HEIGHT, 10))",
+        "detail": "cobrinha",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "kind": 6,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "class Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20\n        self.bullets = []\n    def move(self, direction):\n        if direction == \"left\":\n            self.x -= PLAYER_SPEED\n        elif direction == \"right\":\n            self.x += PLAYER_SPEED",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "Bullet",
+        "kind": 6,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "class Bullet:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def move(self):\n        self.y -= BULLET_SPEED\n    def draw(self):\n        pygame.draw.rect(screen, GREEN, (self.x, self.y, BULLET_SIZE, BULLET_SIZE))\n# Classe para o jogador\nclass Player:",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "kind": 6,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "class Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20\n        self.bullets = []\n        self.enemies_eliminated = 0\n    def check_collisions(self, enemies):\n        enemies_to_remove = []\n        for enemy in enemies:\n            for bullet in self.bullets:",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "Enemy",
+        "kind": 6,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "class Enemy:\n    def __init__(self):\n        self.x = random.randint(0, WIDTH - ENEMY_SIZE)\n        self.y = 0\n    def move(self):\n        self.y += ENEMY_SPEED\n    def draw(self):\n        # Desenhe a aranha preta\n        pygame.draw.circle(screen, BLUE, (self.x + ENEMY_SIZE // 2, self.y + ENEMY_SIZE // 2), ENEMY_SIZE // 2)\n    # No loop principal",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "def main():\n    player = Player()\n    enemies = []\n    enemies_to_remove = []  # Lista para inimigos que precisam ser removidos\n    running = True\n    while running:\n        for event in pygame.event.get():\n            if event.type == pygame.QUIT:\n                running = False\n        keys = pygame.key.get_pressed()",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "PLAYER_SIZE",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "PLAYER_SIZE = 50 # Determina o tamanho (largura e altura) do jogador (o objeto controlado pelo jogador).\nENEMY_SIZE = 40 #  Determina o tamanho dos inimigos (os elementos que o jogador deve evitar ou atirar).\nBULLET_SIZE = 10 #  Determina o tamanho dos tiros (os objetos disparados pelo jogador para atacar os inimigos).\nPLAYER_SPEED = 5 # Define a velocidade de movimento do jogador. Quanto maior o valor, mais rápido o jogador se moverá.\nBULLET_SPEED = 10 # Define a velocidade dos tiros disparados pelo jogador. Quanto maior o valor, mais rápido os tiros se moverão.\nENEMY_SPEED = 3 #  Define a velocidade de movimento dos inimigos. Quanto maior o valor, mais rápido os inimigos se moverão em direção ao jogador.\n# Cores\nWHITE = (0, 255, 255) # cor do poder\nBLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "ENEMY_SIZE",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "ENEMY_SIZE = 40 #  Determina o tamanho dos inimigos (os elementos que o jogador deve evitar ou atirar).\nBULLET_SIZE = 10 #  Determina o tamanho dos tiros (os objetos disparados pelo jogador para atacar os inimigos).\nPLAYER_SPEED = 5 # Define a velocidade de movimento do jogador. Quanto maior o valor, mais rápido o jogador se moverá.\nBULLET_SPEED = 10 # Define a velocidade dos tiros disparados pelo jogador. Quanto maior o valor, mais rápido os tiros se moverão.\nENEMY_SPEED = 3 #  Define a velocidade de movimento dos inimigos. Quanto maior o valor, mais rápido os inimigos se moverão em direção ao jogador.\n# Cores\nWHITE = (0, 255, 255) # cor do poder\nBLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "BULLET_SIZE",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "BULLET_SIZE = 10 #  Determina o tamanho dos tiros (os objetos disparados pelo jogador para atacar os inimigos).\nPLAYER_SPEED = 5 # Define a velocidade de movimento do jogador. Quanto maior o valor, mais rápido o jogador se moverá.\nBULLET_SPEED = 10 # Define a velocidade dos tiros disparados pelo jogador. Quanto maior o valor, mais rápido os tiros se moverão.\nENEMY_SPEED = 3 #  Define a velocidade de movimento dos inimigos. Quanto maior o valor, mais rápido os inimigos se moverão em direção ao jogador.\n# Cores\nWHITE = (0, 255, 255) # cor do poder\nBLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "PLAYER_SPEED",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "PLAYER_SPEED = 5 # Define a velocidade de movimento do jogador. Quanto maior o valor, mais rápido o jogador se moverá.\nBULLET_SPEED = 10 # Define a velocidade dos tiros disparados pelo jogador. Quanto maior o valor, mais rápido os tiros se moverão.\nENEMY_SPEED = 3 #  Define a velocidade de movimento dos inimigos. Quanto maior o valor, mais rápido os inimigos se moverão em direção ao jogador.\n# Cores\nWHITE = (0, 255, 255) # cor do poder\nBLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "BULLET_SPEED",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "BULLET_SPEED = 10 # Define a velocidade dos tiros disparados pelo jogador. Quanto maior o valor, mais rápido os tiros se moverão.\nENEMY_SPEED = 3 #  Define a velocidade de movimento dos inimigos. Quanto maior o valor, mais rápido os inimigos se moverão em direção ao jogador.\n# Cores\nWHITE = (0, 255, 255) # cor do poder\nBLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "ENEMY_SPEED",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "ENEMY_SPEED = 3 #  Define a velocidade de movimento dos inimigos. Quanto maior o valor, mais rápido os inimigos se moverão em direção ao jogador.\n# Cores\nWHITE = (0, 255, 255) # cor do poder\nBLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "WHITE = (0, 255, 255) # cor do poder\nBLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "BLACK",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "BLACK = (0, 0, 0)  # preto\nRED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "RED = (255, 0, 0)  # vermelho\nGREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "GREEN",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "GREEN = (0, 255, 0)  # verde\nBLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "BLUE",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "BLUE = (0, 0, 255)  # azul\nYELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "YELLOW",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "YELLOW = (255, 255, 0)  # amarelo\nORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "ORANGE",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "ORANGE = (255, 165, 0)  # laranja\nPURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")\nclock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "PURPLE",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "PURPLE = (128, 0, 128)  # roxo\nPINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")\nclock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.\n# Classe para a nave do jogador",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "PINK",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "PINK = (255, 192, 203)  # rosa claro\nCYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")\nclock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.\n# Classe para a nave do jogador\nclass Player:",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "CYAN",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "CYAN = (0, 255, 255)  # ciano\nBROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")\nclock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.\n# Classe para a nave do jogador\nclass Player:\n    def __init__(self):",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "BROWN",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "BROWN = (165, 42, 42)  # marrom\nGRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")\nclock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.\n# Classe para a nave do jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "GRAY",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "GRAY = (128, 128, 128)  # cinza\n# Configuração da janela\nscreen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")\nclock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.\n# Classe para a nave do jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "screen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(\"jogo do Gael\")\nclock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.\n# Classe para a nave do jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20\n        self.bullets = []\n    def move(self, direction):",
+        "detail": "jogo",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "jogo",
+        "description": "jogo",
+        "peekOfCode": "clock = pygame.time.Clock() # para controlar a taxa de quadros por segundo (FPS) do seu jogo.\n# Classe para a nave do jogador\nclass Player:\n    def __init__(self):\n        self.x = WIDTH // 2 - PLAYER_SIZE // 2\n        self.y = HEIGHT - PLAYER_SIZE - 20\n        self.bullets = []\n    def move(self, direction):\n        if direction == \"left\":\n            self.x -= PLAYER_SPEED",
+        "detail": "jogo",
+        "documentation": {}
+    }
+]

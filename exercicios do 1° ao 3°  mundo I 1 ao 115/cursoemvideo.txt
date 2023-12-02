@@ -1,0 +1,7 @@
+tiago;28
+joao;52
+maria;21
+ana maria;15
+jaoo ;18
+maria;25
+caitano;65

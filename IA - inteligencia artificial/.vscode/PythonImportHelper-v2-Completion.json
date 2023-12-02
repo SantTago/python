@@ -1,0 +1,201 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "importPath": "googlesearch",
+        "description": "googlesearch",
+        "isExtraImport": true,
+        "detail": "googlesearch",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "importPath": "googlesearch",
+        "description": "googlesearch",
+        "isExtraImport": true,
+        "detail": "googlesearch",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "importPath": "googlesearch",
+        "description": "googlesearch",
+        "isExtraImport": true,
+        "detail": "googlesearch",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "isExtraImport": true,
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "pyttsx3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyttsx3",
+        "description": "pyttsx3",
+        "detail": "pyttsx3",
+        "documentation": {}
+    },
+    {
+        "label": "realizar_pesquisa",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def realizar_pesquisa(query, num_results=5):\n    resultados = search(query, num_results=num_results, lang='pt')\n    return resultados\n@app.route('/', methods=['GET', 'POST'])\ndef index():\n    resultados = []\n    if request.method == 'POST':\n        termo_de_pesquisa = request.form.get('termo')\n        num_de_resultados = int(request.form.get('num_resultados'))\n        resultados = realizar_pesquisa(termo_de_pesquisa, num_de_resultados)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def index():\n    resultados = []\n    if request.method == 'POST':\n        termo_de_pesquisa = request.form.get('termo')\n        num_de_resultados = int(request.form.get('num_resultados'))\n        resultados = realizar_pesquisa(termo_de_pesquisa, num_de_resultados)\n    return render_template('index.html', resultados=resultados)\nif __name__ == '__main__':\n    app.run(debug=True)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\ndef realizar_pesquisa(query, num_results=5):\n    resultados = search(query, num_results=num_results, lang='pt')\n    return resultados\n@app.route('/', methods=['GET', 'POST'])\ndef index():\n    resultados = []\n    if request.method == 'POST':\n        termo_de_pesquisa = request.form.get('termo')\n        num_de_resultados = int(request.form.get('num_resultados'))",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "realizar_pesquisa",
+        "kind": 2,
+        "importPath": "ia",
+        "description": "ia",
+        "peekOfCode": "def realizar_pesquisa(query, num_results=5): # funçao realizar_pesquisa \n    resultados = search(query, num_results=num_results, lang='pt')\n    for i, resultado in enumerate(resultados, start=1):\n        print(f\"Resultado {i}: {resultado}\")\nif __name__ == \"__main__\":\n    termo_de_pesquisa = input(\"Digite o termo que deseja pesquisar: \")\n    num_de_resultados = int(input(\"Digite o número de resultados desejados: \"))\n    realizar_pesquisa(termo_de_pesquisa, num_de_resultados)# realizar_pesquisa -> nome da funçao",
+        "detail": "ia",
+        "documentation": {}
+    },
+    {
+        "label": "pesquisar",
+        "kind": 2,
+        "importPath": "ia_Atualizada",
+        "description": "ia_Atualizada",
+        "peekOfCode": "def pesquisar(query, num_results=5):\n    url = f\"https://www.google.com/search?q={query}&num={num_results}\"\n    headers = {\n        \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3\"}\n    response = requests.get(url, headers=headers)\n    if response.status_code == 200:\n        soup = BeautifulSoup(response.content, 'html.parser')\n        results = []\n        for result in soup.find_all('div', class_='tF2Cxc'):\n            link = result.a.get('href')",
+        "detail": "ia_Atualizada",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "kind": 2,
+        "importPath": "Ia_V1",
+        "description": "Ia_V1",
+        "peekOfCode": "def search(query):\n    result = service.cse().list(\n        q=query,\n        cx='63e73428c5279432c',  # ID do mecanismo de pesquisa personalizado\n    ).execute()\n    return result.get('items', [])\n# Solicitar uma consulta ao usuário\nuser_input = input(\"Digite a palavra-chave de busca: \")\n# Realizar a busca\nresults = search(user_input)",
+        "detail": "Ia_V1",
+        "documentation": {}
+    },
+    {
+        "label": "API_KEY",
+        "kind": 5,
+        "importPath": "Ia_V1",
+        "description": "Ia_V1",
+        "peekOfCode": "API_KEY = 'AIzaSyBN4YwzR5NICUhcqZe5Lj_jD8uMEVZyQ78'\n# site : https://console.cloud.google.com/apis/credentials?project=buscador-397602&supportedpurview=project\n# Criação de um serviço para a API do Google Search\nservice = build('customsearch', 'v1', developerKey=API_KEY)\n# Função para fazer uma busca\ndef search(query):\n    result = service.cse().list(\n        q=query,\n        cx='63e73428c5279432c',  # ID do mecanismo de pesquisa personalizado\n    ).execute()",
+        "detail": "Ia_V1",
+        "documentation": {}
+    },
+    {
+        "label": "service",
+        "kind": 5,
+        "importPath": "Ia_V1",
+        "description": "Ia_V1",
+        "peekOfCode": "service = build('customsearch', 'v1', developerKey=API_KEY)\n# Função para fazer uma busca\ndef search(query):\n    result = service.cse().list(\n        q=query,\n        cx='63e73428c5279432c',  # ID do mecanismo de pesquisa personalizado\n    ).execute()\n    return result.get('items', [])\n# Solicitar uma consulta ao usuário\nuser_input = input(\"Digite a palavra-chave de busca: \")",
+        "detail": "Ia_V1",
+        "documentation": {}
+    },
+    {
+        "label": "user_input",
+        "kind": 5,
+        "importPath": "Ia_V1",
+        "description": "Ia_V1",
+        "peekOfCode": "user_input = input(\"Digite a palavra-chave de busca: \")\n# Realizar a busca\nresults = search(user_input)\n# Exibir os resultados\nif results:\n    print(\"Resultados:\")\n    for index, result in enumerate(results, start=1):\n        print(f\"{index}. {result['title']}: {result['link']}\")\nelse:\n    print(\"Nenhum resultado encontrado.\")",
+        "detail": "Ia_V1",
+        "documentation": {}
+    },
+    {
+        "label": "results",
+        "kind": 5,
+        "importPath": "Ia_V1",
+        "description": "Ia_V1",
+        "peekOfCode": "results = search(user_input)\n# Exibir os resultados\nif results:\n    print(\"Resultados:\")\n    for index, result in enumerate(results, start=1):\n        print(f\"{index}. {result['title']}: {result['link']}\")\nelse:\n    print(\"Nenhum resultado encontrado.\")",
+        "detail": "Ia_V1",
+        "documentation": {}
+    },
+    {
+        "label": "speak",
+        "kind": 2,
+        "importPath": "my",
+        "description": "my",
+        "peekOfCode": "def speak(text):\n    engine = pyttsx3.init()\n    engine.say(text)\n    engine.runAndWait()\ndef search_on_google(query):\n    search_results = search(query, num_results=5)\n    return search_results\ndef main():\n    speak(\"Olá! Como posso ajudar você?\")\n    while True:",
+        "detail": "my",
+        "documentation": {}
+    },
+    {
+        "label": "search_on_google",
+        "kind": 2,
+        "importPath": "my",
+        "description": "my",
+        "peekOfCode": "def search_on_google(query):\n    search_results = search(query, num_results=5)\n    return search_results\ndef main():\n    speak(\"Olá! Como posso ajudar você?\")\n    while True:\n        user_input = input(\"Você: \")\n        if user_input.lower() == 'sair':\n            speak(\"Até logo!\")\n            break",
+        "detail": "my",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "my",
+        "description": "my",
+        "peekOfCode": "def main():\n    speak(\"Olá! Como posso ajudar você?\")\n    while True:\n        user_input = input(\"Você: \")\n        if user_input.lower() == 'sair':\n            speak(\"Até logo!\")\n            break\n        search_results = search_on_google(user_input)\n        if search_results:\n            speak(\"Aqui estão alguns resultados da pesquisa:\")",
+        "detail": "my",
+        "documentation": {}
+    }
+]

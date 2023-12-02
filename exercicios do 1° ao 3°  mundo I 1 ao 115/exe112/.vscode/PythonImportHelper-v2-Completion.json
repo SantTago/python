@@ -1,0 +1,74 @@
+[
+    {
+        "label": "moeda",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "moeda",
+        "description": "moeda",
+        "detail": "moeda",
+        "documentation": {}
+    },
+    {
+        "label": "aumentar",
+        "kind": 2,
+        "importPath": "moeda",
+        "description": "moeda",
+        "peekOfCode": "def aumentar(preço = 0, taxa = 0, formato=False):\n    res = preço + (preço * taxa / 100)\n    return res if formato is False else moeda(res)# is caso seja falso \n# se format nao for falso ele sera True e vai chamar a funçao moeda()\ndef diminuir(preço = 0, taxa = 0, formato=False):\n    res = preço - (preço * taxa / 100)\n    return res if formato is False else moeda(res)\ndef dobro(preço = 0, formato=False):\n    res = preço * 2\n    return res if formato is False else moeda(res)",
+        "detail": "moeda",
+        "documentation": {}
+    },
+    {
+        "label": "diminuir",
+        "kind": 2,
+        "importPath": "moeda",
+        "description": "moeda",
+        "peekOfCode": "def diminuir(preço = 0, taxa = 0, formato=False):\n    res = preço - (preço * taxa / 100)\n    return res if formato is False else moeda(res)\ndef dobro(preço = 0, formato=False):\n    res = preço * 2\n    return res if formato is False else moeda(res)\ndef metade(preço = 0, formato=False):\n    res = preço / 2\n    return res if not formato else moeda(res)\ndef moeda(preço = 0, moeda = \"R$:\"):",
+        "detail": "moeda",
+        "documentation": {}
+    },
+    {
+        "label": "dobro",
+        "kind": 2,
+        "importPath": "moeda",
+        "description": "moeda",
+        "peekOfCode": "def dobro(preço = 0, formato=False):\n    res = preço * 2\n    return res if formato is False else moeda(res)\ndef metade(preço = 0, formato=False):\n    res = preço / 2\n    return res if not formato else moeda(res)\ndef moeda(preço = 0, moeda = \"R$:\"):\n    return f'{moeda}{preço:>.2f}'.replace('.', ',')  # .replac() ele troca o '.' ponto pela ',' virgula\ndef resumo(preço=0, taxaa=10, taxar=5):\n    print('-'* 30) ",
+        "detail": "moeda",
+        "documentation": {}
+    },
+    {
+        "label": "metade",
+        "kind": 2,
+        "importPath": "moeda",
+        "description": "moeda",
+        "peekOfCode": "def metade(preço = 0, formato=False):\n    res = preço / 2\n    return res if not formato else moeda(res)\ndef moeda(preço = 0, moeda = \"R$:\"):\n    return f'{moeda}{preço:>.2f}'.replace('.', ',')  # .replac() ele troca o '.' ponto pela ',' virgula\ndef resumo(preço=0, taxaa=10, taxar=5):\n    print('-'* 30) \n    print(f'resumo do valor'.center(30))  # .center para centralizar o str\n    print('-'* 30 )\n    print(f'Preço Analizando: \\t {moeda(preço)}') # \\t para criar uma tabulaçao das informaçoes  caso uma nao seja suficiente tem que por duas \\t\\t",
+        "detail": "moeda",
+        "documentation": {}
+    },
+    {
+        "label": "moeda",
+        "kind": 2,
+        "importPath": "moeda",
+        "description": "moeda",
+        "peekOfCode": "def moeda(preço = 0, moeda = \"R$:\"):\n    return f'{moeda}{preço:>.2f}'.replace('.', ',')  # .replac() ele troca o '.' ponto pela ',' virgula\ndef resumo(preço=0, taxaa=10, taxar=5):\n    print('-'* 30) \n    print(f'resumo do valor'.center(30))  # .center para centralizar o str\n    print('-'* 30 )\n    print(f'Preço Analizando: \\t {moeda(preço)}') # \\t para criar uma tabulaçao das informaçoes  caso uma nao seja suficiente tem que por duas \\t\\t\n    print(f'Dobro do preço: \\t {dobro(preço, True)}')\n    print(f'Metade do preço: \\t {metade(preço, True)}')\n    print(f'{taxaa}% tanto de aumento: \\t {aumentar(preço, taxaa, True)}')",
+        "detail": "moeda",
+        "documentation": {}
+    },
+    {
+        "label": "resumo",
+        "kind": 2,
+        "importPath": "moeda",
+        "description": "moeda",
+        "peekOfCode": "def resumo(preço=0, taxaa=10, taxar=5):\n    print('-'* 30) \n    print(f'resumo do valor'.center(30))  # .center para centralizar o str\n    print('-'* 30 )\n    print(f'Preço Analizando: \\t {moeda(preço)}') # \\t para criar uma tabulaçao das informaçoes  caso uma nao seja suficiente tem que por duas \\t\\t\n    print(f'Dobro do preço: \\t {dobro(preço, True)}')\n    print(f'Metade do preço: \\t {metade(preço, True)}')\n    print(f'{taxaa}% tanto de aumento: \\t {aumentar(preço, taxaa, True)}')\n    print(f'{taxar}% tanto de rezução: \\t {diminuir(preço, taxar, True)}')\n    print('-'* 30 )",
+        "detail": "moeda",
+        "documentation": {}
+    },
+    {
+        "label": "preço",
+        "kind": 5,
+        "importPath": "teste",
+        "description": "teste",
+        "peekOfCode": "preço = float(input(\"Digite o preço R$: \"))\nmoeda.resumo(preço, 90, 35) # 80 parametro da funçao aumentar()\n                     #35 parametro da funçao diminuir()\n#=========Como O professor fez =====================",
+        "detail": "teste",
+        "documentation": {}
+    }
+]

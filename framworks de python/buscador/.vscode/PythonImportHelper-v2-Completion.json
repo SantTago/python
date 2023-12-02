@@ -1,0 +1,46 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "pesquisar",
+        "importPath": "buscadearquivos",
+        "description": "buscadearquivos",
+        "isExtraImport": true,
+        "detail": "buscadearquivos",
+        "documentation": {}
+    },
+    {
+        "label": "pesquisar",
+        "kind": 2,
+        "importPath": "buscadearquivos",
+        "description": "buscadearquivos",
+        "peekOfCode": "def pesquisar(caminho_procura, termo_procura):\n    def formata_tamanho(tamanho):\n        base = 1024\n        kilo = base\n        mega = base ** 2\n        giga = base ** 3\n        tera = base ** 4\n        peta = base ** 5\n        if tamanho < kilo:\n            texto = 'B'",
+        "detail": "buscadearquivos",
+        "documentation": {}
+    },
+    {
+        "label": "caminho",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "caminho = input('Digite o caminho onde o arquivo possa estar: ')\ntermo = input('Digite o termo da pesquisa: ')\npesquisar(caminho, termo)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "termo",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "termo = input('Digite o termo da pesquisa: ')\npesquisar(caminho, termo)",
+        "detail": "main",
+        "documentation": {}
+    }
+]

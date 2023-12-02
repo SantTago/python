@@ -1,0 +1,175 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "YouTube",
+        "importPath": "pytube",
+        "description": "pytube",
+        "isExtraImport": true,
+        "detail": "pytube",
+        "documentation": {}
+    },
+    {
+        "label": "Tk",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "filedialog",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "VideoFileClip",
+        "importPath": "moviepy.video.io.VideoFileClip",
+        "description": "moviepy.video.io.VideoFileClip",
+        "isExtraImport": true,
+        "detail": "moviepy.video.io.VideoFileClip",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "isExtraImport": true,
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "HttpError",
+        "importPath": "googleapiclient.errors",
+        "description": "googleapiclient.errors",
+        "isExtraImport": true,
+        "detail": "googleapiclient.errors",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "baixar_video",
+        "kind": 2,
+        "importPath": "Bot.baixar.youtube",
+        "description": "Bot.baixar.youtube",
+        "peekOfCode": "def baixar_video(link):\n    try:\n        # Crie uma instância do objeto YouTube com o link do vídeo\n        yt = YouTube(link)\n        # Obtenha a melhor resolução disponível\n        stream = yt.streams.get_highest_resolution()\n        # Defina a pasta de destino onde você deseja salvar o vídeo\n        pasta_destino = r\"C:\\Users\\mocob\\Desktop\\PASTAS\\exerciciosPython\\buscador\\videos\"\n        # Verifique se a pasta de destino existe e crie-a se não existir\n        if not os.path.exists(pasta_destino):",
+        "detail": "Bot.baixar.youtube",
+        "documentation": {}
+    },
+    {
+        "label": "link_do_video",
+        "kind": 5,
+        "importPath": "Bot.baixar.youtube",
+        "description": "Bot.baixar.youtube",
+        "peekOfCode": "link_do_video = input(\"Informe a URL: \")\nbaixar_video(link_do_video)",
+        "detail": "Bot.baixar.youtube",
+        "documentation": {}
+    },
+    {
+        "label": "cortar_video",
+        "kind": 2,
+        "importPath": "Bot.cortador_de_video",
+        "description": "Bot.cortador_de_video",
+        "peekOfCode": "def cortar_video(video_path, pasta_destino, duracao_segmento):\n    try:\n        video = VideoFileClip(video_path) #video_path video selecionado pelo usuario |  VideoFileClip permite que você leia um arquivo de vídeo (como um arquivo MP4\n        duracao_total = video.duration\n        num_segmentos = int(duracao_total // duracao_segmento) # duracao_total  total dividito por segmento\n        # num_segmentos será um número inteiro que representa quantos segmentos cabem no vídeo.\n        base_name = os.path.splitext(os.path.basename(video_path))[0]\n                    # os.path.splitext - extrai o nome do arquivo do vídeo (sem a extensão) usando as funções do módulo\n        if not os.path.exists(pasta_destino): # Verifica se a pasta de destino especificada (pasta_destino) não existe e, se não existir, a cria usando\n            os.makedirs(pasta_destino)",
+        "detail": "Bot.cortador_de_video",
+        "documentation": {}
+    },
+    {
+        "label": "selecionar_video",
+        "kind": 2,
+        "importPath": "Bot.cortador_de_video",
+        "description": "Bot.cortador_de_video",
+        "peekOfCode": "def selecionar_video(): \n    root = Tk() # TK() Criar a janela principal ou tk.Tk()\n    root.withdraw()  # Oculta a janela principal se você não desejar exibi-la\n    file_path = filedialog.askopenfilename(title=\"Selecione um vídeo\") # askopenfilename   exibe uma janela de diálogo na qual o usuário pode navegar pelo sistema de arquivos e selecionar um arquivo\n    return file_path # ele retorna a caixa para procurar o arquivo de MP4\nif __name__ == \"__main__\":\n    video_path = selecionar_video() #  selecionar_video() e a funçao que vai trazer o video selecionado\n    if not video_path: # se nao voltar nenhum video\n        print(\"Nenhum vídeo selecionado.\")\n    else: # se voltar esse e o caminho para salvar",
+        "detail": "Bot.cortador_de_video",
+        "documentation": {}
+    },
+    {
+        "label": "search_images",
+        "kind": 2,
+        "importPath": "busc_img",
+        "description": "busc_img",
+        "peekOfCode": "def search_images(query, num_images=100):  # Ajuste o valor padrão ou passe um valor diferente ao chamar a função\n    service = build(\"customsearch\", \"v1\", developerKey=API_KEY)\n    try:\n        result = service.cse().list(\n            q=query,\n            cx=SEARCH_ENGINE_ID,\n            searchType=\"image\",\n            num=num_images  # Ajuste o valor aqui\n        ).execute()\n        items = result.get(\"items\", [])",
+        "detail": "busc_img",
+        "documentation": {}
+    },
+    {
+        "label": "download_and_display_images",
+        "kind": 2,
+        "importPath": "busc_img",
+        "description": "busc_img",
+        "peekOfCode": "def download_and_display_images(query, num_images=5):\n    items = search_images(query, num_images)\n    if not items:\n        return\n    download_path = os.path.join(os.path.expanduser(\"~\"), \"Desktop\", \"images\", query.replace(\" \", \"_\"))\n    if not os.path.exists(download_path):\n        os.makedirs(download_path)\n    print(\"Baixando e exibindo imagens...\")\n    for idx, item in enumerate(items, start=1):\n        image_url = item.get(\"link\")",
+        "detail": "busc_img",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "busc_img",
+        "description": "busc_img",
+        "peekOfCode": "def main():\n    search_query = input(\"Digite o que você deseja buscar: \")\n    num_images = int(input(\"Digite o número de imagens que deseja baixar e exibir: \"))\n    download_and_display_images(search_query, num_images)\ndef download_and_display_images(query, num_images=5):\n    items = search_images(query, num_images)\n    if not items:\n        return\n    download_path = os.path.join(os.path.expanduser(\"~\"), \"Desktop\", \"images\", query.replace(\" \", \"_\"))\n    if not os.path.exists(download_path):",
+        "detail": "busc_img",
+        "documentation": {}
+    },
+    {
+        "label": "download_and_display_images",
+        "kind": 2,
+        "importPath": "busc_img",
+        "description": "busc_img",
+        "peekOfCode": "def download_and_display_images(query, num_images=5):\n    items = search_images(query, num_images)\n    if not items:\n        return\n    download_path = os.path.join(os.path.expanduser(\"~\"), \"Desktop\", \"images\", query.replace(\" \", \"_\"))\n    if not os.path.exists(download_path):\n        os.makedirs(download_path)\n    print(\"Baixando imagens...\")\n    for idx, item in enumerate(items, start=1):\n        image_url = item.get(\"link\")",
+        "detail": "busc_img",
+        "documentation": {}
+    },
+    {
+        "label": "API_KEY",
+        "kind": 5,
+        "importPath": "busc_img",
+        "description": "busc_img",
+        "peekOfCode": "API_KEY = \"AIzaSyCaruQ2EPnbIOdTf8bJla6lPQJvrS8why4\"  # Substitua pelo seu próprio chave de API\nSEARCH_ENGINE_ID = \"63e73428c5279432c\"  # Substitua pelo seu próprio ID de mecanismo de pesquisa\n# ...\ndef search_images(query, num_images=100):  # Ajuste o valor padrão ou passe um valor diferente ao chamar a função\n    service = build(\"customsearch\", \"v1\", developerKey=API_KEY)\n    try:\n        result = service.cse().list(\n            q=query,\n            cx=SEARCH_ENGINE_ID,\n            searchType=\"image\",",
+        "detail": "busc_img",
+        "documentation": {}
+    },
+    {
+        "label": "SEARCH_ENGINE_ID",
+        "kind": 5,
+        "importPath": "busc_img",
+        "description": "busc_img",
+        "peekOfCode": "SEARCH_ENGINE_ID = \"63e73428c5279432c\"  # Substitua pelo seu próprio ID de mecanismo de pesquisa\n# ...\ndef search_images(query, num_images=100):  # Ajuste o valor padrão ou passe um valor diferente ao chamar a função\n    service = build(\"customsearch\", \"v1\", developerKey=API_KEY)\n    try:\n        result = service.cse().list(\n            q=query,\n            cx=SEARCH_ENGINE_ID,\n            searchType=\"image\",\n            num=num_images  # Ajuste o valor aqui",
+        "detail": "busc_img",
+        "documentation": {}
+    }
+]

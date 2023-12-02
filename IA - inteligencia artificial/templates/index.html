@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesquisa IA</title>
+</head>
+<body>
+    <h1>Pesquisa IA</h1>
+    <form method="POST">
+        <label for="termo">Termo de Pesquisa:</label>
+        <input type="text" name="termo" required><br>
+        <label for="num_resultados">Número de Resultados:</label>
+        <input type="number" name="num_resultados" required><br>
+        <button type="submit">Pesquisar</button>
+    </form>
+    <h2>Resultados:</h2>
+    <ul>
+        {% for resultado in resultados %}
+            <li>{{ resultado }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

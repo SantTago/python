@@ -1,0 +1,7 @@
+#Vermelho: #ff0000
+#Verde: #00ff00
+#Azul: #0000ff
+#Amarelo: #ffff00
+#Laranja: #ff6600
+#Rosa: #ff99cc
+#Roxo: #9900cc

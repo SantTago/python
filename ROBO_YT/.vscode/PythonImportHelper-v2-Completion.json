@@ -1,0 +1,365 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "YouTube",
+        "importPath": "pytube",
+        "description": "pytube",
+        "isExtraImport": true,
+        "detail": "pytube",
+        "documentation": {}
+    },
+    {
+        "label": "YouTube",
+        "importPath": "pytube",
+        "description": "pytube",
+        "isExtraImport": true,
+        "detail": "pytube",
+        "documentation": {}
+    },
+    {
+        "label": "YouTube",
+        "importPath": "pytube",
+        "description": "pytube",
+        "isExtraImport": true,
+        "detail": "pytube",
+        "documentation": {}
+    },
+    {
+        "label": "googleapiclient.discovery",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "pyautogui",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyautogui",
+        "description": "pyautogui",
+        "detail": "pyautogui",
+        "documentation": {}
+    },
+    {
+        "label": "VideoFileClip",
+        "importPath": "moviepy.video.io.VideoFileClip",
+        "description": "moviepy.video.io.VideoFileClip",
+        "isExtraImport": true,
+        "detail": "moviepy.video.io.VideoFileClip",
+        "documentation": {}
+    },
+    {
+        "label": "VideoFileClip",
+        "importPath": "moviepy.video.io.VideoFileClip",
+        "description": "moviepy.video.io.VideoFileClip",
+        "isExtraImport": true,
+        "detail": "moviepy.video.io.VideoFileClip",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "webbrowser",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "webbrowser",
+        "description": "webbrowser",
+        "detail": "webbrowser",
+        "documentation": {}
+    },
+    {
+        "label": "VideoFileClip",
+        "importPath": "moviepy.editor",
+        "description": "moviepy.editor",
+        "isExtraImport": true,
+        "detail": "moviepy.editor",
+        "documentation": {}
+    },
+    {
+        "label": "baixar_video",
+        "kind": 2,
+        "importPath": "baixar.youtube",
+        "description": "baixar.youtube",
+        "peekOfCode": "def baixar_video(link):\n    try:\n        # Crie uma instância do objeto YouTube com o link do vídeo\n        yt = YouTube(link)\n        # Obtenha a melhor resolução disponível\n        stream = yt.streams.get_highest_resolution()\n        # Defina a pasta de destino onde você deseja salvar o vídeo\n        pasta_destino = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\PASTAS\\\\ROBO_YT\\\\videos\"\n        # Verifique se a pasta de destino existe e crie-a se não existir\n        if not os.path.exists(pasta_destino):",
+        "detail": "baixar.youtube",
+        "documentation": {}
+    },
+    {
+        "label": "link_do_video",
+        "kind": 5,
+        "importPath": "baixar.youtube",
+        "description": "baixar.youtube",
+        "peekOfCode": "link_do_video = input(\"Informe a URL: \")\nbaixar_video(link_do_video)",
+        "detail": "baixar.youtube",
+        "documentation": {}
+    },
+    {
+        "label": "baixar_video",
+        "kind": 2,
+        "importPath": "baixar_link",
+        "description": "baixar_link",
+        "peekOfCode": "def baixar_video(link, arquivo):\n    try:\n        # Crie uma instância do objeto YouTube com o link do vídeo\n        yt = YouTube(link)\n        # Obtenha a melhor resolução disponível\n        stream = yt.streams.get_highest_resolution()\n        # Defina a pasta de destino onde você deseja salvar o vídeo\n        pasta_destino = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\PASTAS\\\\ROBO_YT\\\\videos\"\n        # Verifique se a pasta de destino existe e crie-a se não existir\n        if not os.path.exists(pasta_destino):",
+        "detail": "baixar_link",
+        "documentation": {}
+    },
+    {
+        "label": "arquivo_txt",
+        "kind": 5,
+        "importPath": "baixar_link",
+        "description": "baixar_link",
+        "peekOfCode": "arquivo_txt = \"links.txt\"\n# Verifique se o arquivo .txt existe\nif os.path.exists(arquivo_txt):\n    # Abra o arquivo .txt e leia os links linha por linha\n    with open(arquivo_txt, \"r\") as arquivo:\n        for linha in arquivo:\n            link_do_video = linha.strip()  # Remove espaços em branco e quebras de linha\n            baixar_video(link_do_video, arquivo_txt)\nelse:\n    print(f\"O arquivo {arquivo_txt} não foi encontrado.\")",
+        "detail": "baixar_link",
+        "documentation": {}
+    },
+    {
+        "label": "get_latest_video_url",
+        "kind": 2,
+        "importPath": "capturar_URL_Canal",
+        "description": "capturar_URL_Canal",
+        "peekOfCode": "def get_latest_video_url(channel_id):\n    try:\n        # Faz uma solicitação à API para obter os uploads do canal\n        response = youtube.channels().list(part='contentDetails', id=channel_id).execute()\n        # Obtém a playlist de uploads do canal\n        uploads_playlist_id = response['items'][0]['contentDetails']['relatedPlaylists']['uploads']\n        # Faz uma solicitação à API para obter os vídeos na playlist de uploads\n        playlist_response = youtube.playlistItems().list(\n            part='snippet',\n            maxResults=1,  # Obtém apenas o vídeo mais recente",
+        "detail": "capturar_URL_Canal",
+        "documentation": {}
+    },
+    {
+        "label": "read_previous_url",
+        "kind": 2,
+        "importPath": "capturar_URL_Canal",
+        "description": "capturar_URL_Canal",
+        "peekOfCode": "def read_previous_url(file_name):\n    # Lê a URL anterior do arquivo de texto\n    if os.path.isfile(file_name):\n        with open(file_name, 'r') as file:\n            return file.read().strip()\n    else:\n        return None\ndef save_previous_url(file_name, url):\n    # Salva a URL anterior no arquivo de texto\n    with open(file_name, 'w') as file:",
+        "detail": "capturar_URL_Canal",
+        "documentation": {}
+    },
+    {
+        "label": "save_previous_url",
+        "kind": 2,
+        "importPath": "capturar_URL_Canal",
+        "description": "capturar_URL_Canal",
+        "peekOfCode": "def save_previous_url(file_name, url):\n    # Salva a URL anterior no arquivo de texto\n    with open(file_name, 'w') as file:\n        file.write(url)\nif __name__ == '__main__':\n    channel_input = input('\\033[33mDigite o nome do canal do YouTube ou a URL do canal: \\033[m')\n    # Verifica se o input é uma URL de canal ou um nome de canal\n    if 'youtube.com/channel/' in channel_input:\n        match = re.match(r'https://www\\.youtube\\.com/channel/([a-zA-Z0-9_-]+)', channel_input)\n        if match:",
+        "detail": "capturar_URL_Canal",
+        "documentation": {}
+    },
+    {
+        "label": "API_KEY",
+        "kind": 5,
+        "importPath": "capturar_URL_Canal",
+        "description": "capturar_URL_Canal",
+        "peekOfCode": "API_KEY = 'AIzaSyCaruQ2EPnbIOdTf8bJla6lPQJvrS8why4'\n# Crie um serviço da API do YouTube\nyoutube = googleapiclient.discovery.build('youtube', 'v3', developerKey=API_KEY)\n# Nome do arquivo de texto para armazenar a URL anterior\nfile_name = 'previous_url.txt'\ndef get_latest_video_url(channel_id):\n    try:\n        # Faz uma solicitação à API para obter os uploads do canal\n        response = youtube.channels().list(part='contentDetails', id=channel_id).execute()\n        # Obtém a playlist de uploads do canal",
+        "detail": "capturar_URL_Canal",
+        "documentation": {}
+    },
+    {
+        "label": "youtube",
+        "kind": 5,
+        "importPath": "capturar_URL_Canal",
+        "description": "capturar_URL_Canal",
+        "peekOfCode": "youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey=API_KEY)\n# Nome do arquivo de texto para armazenar a URL anterior\nfile_name = 'previous_url.txt'\ndef get_latest_video_url(channel_id):\n    try:\n        # Faz uma solicitação à API para obter os uploads do canal\n        response = youtube.channels().list(part='contentDetails', id=channel_id).execute()\n        # Obtém a playlist de uploads do canal\n        uploads_playlist_id = response['items'][0]['contentDetails']['relatedPlaylists']['uploads']\n        # Faz uma solicitação à API para obter os vídeos na playlist de uploads",
+        "detail": "capturar_URL_Canal",
+        "documentation": {}
+    },
+    {
+        "label": "file_name",
+        "kind": 5,
+        "importPath": "capturar_URL_Canal",
+        "description": "capturar_URL_Canal",
+        "peekOfCode": "file_name = 'previous_url.txt'\ndef get_latest_video_url(channel_id):\n    try:\n        # Faz uma solicitação à API para obter os uploads do canal\n        response = youtube.channels().list(part='contentDetails', id=channel_id).execute()\n        # Obtém a playlist de uploads do canal\n        uploads_playlist_id = response['items'][0]['contentDetails']['relatedPlaylists']['uploads']\n        # Faz uma solicitação à API para obter os vídeos na playlist de uploads\n        playlist_response = youtube.playlistItems().list(\n            part='snippet',",
+        "detail": "capturar_URL_Canal",
+        "documentation": {}
+    },
+    {
+        "label": "cortar_video",
+        "kind": 2,
+        "importPath": "cortador_de_video",
+        "description": "cortador_de_video",
+        "peekOfCode": "def cortar_video(video_path, pasta_destino, duracao_segmento):\n    try:\n        video = VideoFileClip(video_path)\n        duracao_total = video.duration\n        base_name = os.path.splitext(os.path.basename(video_path))[0]\n        if not os.path.exists(pasta_destino):\n            os.makedirs(pasta_destino)\n        start_time = 0\n        end_time = duracao_segmento\n        while start_time < duracao_total:",
+        "detail": "cortador_de_video",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_videos_na_pasta",
+        "kind": 2,
+        "importPath": "cortador_de_video",
+        "description": "cortador_de_video",
+        "peekOfCode": "def buscar_videos_na_pasta(pasta):\n    arquivos = os.listdir(pasta)\n    videos = [arquivo for arquivo in arquivos if arquivo.endswith('.mp4')]\n    caminhos_videos = [os.path.join(pasta, video) for video in videos]\n    return caminhos_videos\nif __name__ == \"__main__\":\n    pasta_videos = r\"C:\\\\Users\\\\mocob\\\\Desktop\\\\PASTAS\\\\ROBO_YT\\\\videos\"\n    pasta_destino = r\"C:\\\\Users\\\\mocob\\\\Desktop\\\\cortes\"\n    duracao_segmento = 59  # segundos\n    while True:",
+        "detail": "cortador_de_video",
+        "documentation": {}
+    },
+    {
+        "label": "click",
+        "kind": 2,
+        "importPath": "elimina_manual",
+        "description": "elimina_manual",
+        "peekOfCode": "def click(x=0,y=0):\n        pyautogui.moveTo(x, y, duration=1)\n        pyautogui.click()\ntry: \n    click(170,748) # pasta\n    #pyautogui.click(500, 300, button='right')\n    time.sleep(2)\n    click(872,343) #area de trabalho\n    time.sleep(2)\n    pyautogui.click(1055, 353, button='right') # segundo botao em cima da pasta",
+        "detail": "elimina_manual",
+        "documentation": {}
+    },
+    {
+        "label": "corder",
+        "kind": 2,
+        "importPath": "envio_com_legenda",
+        "description": "envio_com_legenda",
+        "peekOfCode": "def corder(x=0,y=0):\n        pyautogui.moveTo(x, y, duration=1)\n        pyautogui.click()\n    # Simule um clique com o botão direito do mouse\n    #pyautogui.click(button='right')\n    # Simule o atalho Ctrl + C\n    # pyautogui.hotkey('ctrl', 'c')\ntry:  \n    corder(677,552) # video\n    time.sleep(3)",
+        "detail": "envio_com_legenda",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "envio_com_legenda",
+        "description": "envio_com_legenda",
+        "peekOfCode": "url = \"https://www.facebook.com/\"\n# Abrir o navegador no YouTube\nwebbrowser.open(url)\n# Aguarde alguns segundos para que o YouTube seja carregado\ntime.sleep(5)\ndef corder(x=0,y=0):\n        pyautogui.moveTo(x, y, duration=1)\n        pyautogui.click()\n    # Simule um clique com o botão direito do mouse\n    #pyautogui.click(button='right')",
+        "detail": "envio_com_legenda",
+        "documentation": {}
+    },
+    {
+        "label": "click",
+        "kind": 2,
+        "importPath": "excluir_video",
+        "description": "excluir_video",
+        "peekOfCode": "def click(x=0,y=0):\n    pyautogui.moveTo(x, y, duration=1)\n    pyautogui.click()\ntry: \n    click(170,748) # pasta\n    #pyautogui.click(500, 300, button='right')\n    time.sleep(2)\n    click(872,343) #area de trabalho\n    time.sleep(2)\n    pyautogui.click(1055, 353, button='right') # segundo botao em cima da pasta",
+        "detail": "excluir_video",
+        "documentation": {}
+    },
+    {
+        "label": "pasta_videos",
+        "kind": 5,
+        "importPath": "excluir_video",
+        "description": "excluir_video",
+        "peekOfCode": "pasta_videos = r\"C:\\\\Users\\\\mocob\\\\Desktop\\\\cortes\"\nvideos_para_cortar = buscar_videos_na_pasta(pasta_videos)\nif not videos_para_cortar:\n    print(\"Nenhum vídeo encontrado na pasta.\")\nprint(\"PROGRAMA FINALIZADO COM SUCESSO!!!!\")",
+        "detail": "excluir_video",
+        "documentation": {}
+    },
+    {
+        "label": "videos_para_cortar",
+        "kind": 5,
+        "importPath": "excluir_video",
+        "description": "excluir_video",
+        "peekOfCode": "videos_para_cortar = buscar_videos_na_pasta(pasta_videos)\nif not videos_para_cortar:\n    print(\"Nenhum vídeo encontrado na pasta.\")\nprint(\"PROGRAMA FINALIZADO COM SUCESSO!!!!\")",
+        "detail": "excluir_video",
+        "documentation": {}
+    },
+    {
+        "label": "corder",
+        "kind": 2,
+        "importPath": "facebook",
+        "description": "facebook",
+        "peekOfCode": "def corder(x=0,y=0):\n    pyautogui.moveTo(x, y, duration=1)\n    pyautogui.click()\ntry:\n    corder(76,91) #Facebook\n    time.sleep(3)\n    corder(688,552) # Video/Foto\n    time.sleep(3)\n    corder(838,549) # Reel\n    time.sleep(3)",
+        "detail": "facebook",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "facebook",
+        "description": "facebook",
+        "peekOfCode": "url = \"https://www.facebook.com/\"\n# Abrir o navegador no YouTube\nwebbrowser.open(url)\n# Aguarde alguns segundos para que o YouTube seja carregado\ntime.sleep(5)\ndef corder(x=0,y=0):\n    pyautogui.moveTo(x, y, duration=1)\n    pyautogui.click()\ntry:\n    corder(76,91) #Facebook",
+        "detail": "facebook",
+        "documentation": {}
+    },
+    {
+        "label": "video_input",
+        "kind": 5,
+        "importPath": "Redimensione",
+        "description": "Redimensione",
+        "peekOfCode": "video_input = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\PASTAS\\\\ROBO_YT\\\\videos\\\\Balmain.mp4\"\n# Defina o nome do arquivo de saída\nvideo_output = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\cortes\\\\teste.mp4\"\n# Carregue o vídeo\nclip = VideoFileClip(video_input)\n# Redimensione o vídeo para a resolução 1080x1920\nclip_resized = clip.resize(height=1080)\n# Defina a área de corte para manter a proporção correta (9:16)\nclip_cropped = clip_resized.crop(y1=0, y2=1920, x1=0, x2=720)\n# Salve o vídeo resultante",
+        "detail": "Redimensione",
+        "documentation": {}
+    },
+    {
+        "label": "video_output",
+        "kind": 5,
+        "importPath": "Redimensione",
+        "description": "Redimensione",
+        "peekOfCode": "video_output = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\cortes\\\\teste.mp4\"\n# Carregue o vídeo\nclip = VideoFileClip(video_input)\n# Redimensione o vídeo para a resolução 1080x1920\nclip_resized = clip.resize(height=1080)\n# Defina a área de corte para manter a proporção correta (9:16)\nclip_cropped = clip_resized.crop(y1=0, y2=1920, x1=0, x2=720)\n# Salve o vídeo resultante\nclip_cropped.write_videofile(video_output, codec=\"libx264\")\nprint(f\"Vídeo cortado e redimensionado salvo como {video_output}\")",
+        "detail": "Redimensione",
+        "documentation": {}
+    },
+    {
+        "label": "clip",
+        "kind": 5,
+        "importPath": "Redimensione",
+        "description": "Redimensione",
+        "peekOfCode": "clip = VideoFileClip(video_input)\n# Redimensione o vídeo para a resolução 1080x1920\nclip_resized = clip.resize(height=1080)\n# Defina a área de corte para manter a proporção correta (9:16)\nclip_cropped = clip_resized.crop(y1=0, y2=1920, x1=0, x2=720)\n# Salve o vídeo resultante\nclip_cropped.write_videofile(video_output, codec=\"libx264\")\nprint(f\"Vídeo cortado e redimensionado salvo como {video_output}\")",
+        "detail": "Redimensione",
+        "documentation": {}
+    },
+    {
+        "label": "clip_resized",
+        "kind": 5,
+        "importPath": "Redimensione",
+        "description": "Redimensione",
+        "peekOfCode": "clip_resized = clip.resize(height=1080)\n# Defina a área de corte para manter a proporção correta (9:16)\nclip_cropped = clip_resized.crop(y1=0, y2=1920, x1=0, x2=720)\n# Salve o vídeo resultante\nclip_cropped.write_videofile(video_output, codec=\"libx264\")\nprint(f\"Vídeo cortado e redimensionado salvo como {video_output}\")",
+        "detail": "Redimensione",
+        "documentation": {}
+    },
+    {
+        "label": "clip_cropped",
+        "kind": 5,
+        "importPath": "Redimensione",
+        "description": "Redimensione",
+        "peekOfCode": "clip_cropped = clip_resized.crop(y1=0, y2=1920, x1=0, x2=720)\n# Salve o vídeo resultante\nclip_cropped.write_videofile(video_output, codec=\"libx264\")\nprint(f\"Vídeo cortado e redimensionado salvo como {video_output}\")",
+        "detail": "Redimensione",
+        "documentation": {}
+    },
+    {
+        "label": "baixar_video",
+        "kind": 2,
+        "importPath": "sistema",
+        "description": "sistema",
+        "peekOfCode": "def baixar_video(link, arquivo):\n    try:\n        # Crie uma instância do objeto YouTube com o link do vídeo\n        yt = YouTube(link)\n        # Obtenha a melhor resolução disponível\n        stream = yt.streams.get_highest_resolution()\n        # Defina a pasta de destino onde você deseja salvar o vídeo\n        pasta_destino = \"C:\\\\Users\\\\mocob\\\\Desktop\\\\PASTAS\\\\ROBO_YT\\\\videos\"\n        # Verifique se a pasta de destino existe e crie-a se não existir\n        if not os.path.exists(pasta_destino):",
+        "detail": "sistema",
+        "documentation": {}
+    },
+    {
+        "label": "cortar_video",
+        "kind": 2,
+        "importPath": "sistema",
+        "description": "sistema",
+        "peekOfCode": "def cortar_video(video_path, pasta_destino, duracao_segmento):\n    try:\n        video = VideoFileClip(video_path)\n        duracao_total = video.duration\n        base_name = os.path.splitext(os.path.basename(video_path))[0]\n        if not os.path.exists(pasta_destino):\n            os.makedirs(pasta_destino)\n        start_time = 0\n        end_time = duracao_segmento\n        segment_number = 1  # Adiciona um número sequencial ao nome do arquivo",
+        "detail": "sistema",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_videos_na_pasta",
+        "kind": 2,
+        "importPath": "sistema",
+        "description": "sistema",
+        "peekOfCode": "def buscar_videos_na_pasta(pasta):\n    arquivos = os.listdir(pasta)\n    videos = [arquivo for arquivo in arquivos if arquivo.endswith('.mp4')]\n    caminhos_videos = [os.path.join(pasta, video) for video in videos]\n    return caminhos_videos\nif __name__ == \"__main__\":\n    pasta_videos = r\"C:\\\\Users\\\\mocob\\\\Desktop\\\\PASTAS\\\\ROBO_YT\\\\videos\"\n    pasta_destino = r\"C:\\\\Users\\\\mocob\\\\Desktop\\\\cortes\"\n    duracao_segmento = 120  # segundos\n    while True:",
+        "detail": "sistema",
+        "documentation": {}
+    },
+    {
+        "label": "arquivo_txt",
+        "kind": 5,
+        "importPath": "sistema",
+        "description": "sistema",
+        "peekOfCode": "arquivo_txt = \"links.txt\"\n# Verifique se o arquivo .txt existe\nif os.path.exists(arquivo_txt):\n    # Abra o arquivo .txt e leia os links linha por linha\n    with open(arquivo_txt, \"r\") as arquivo:\n        for linha in arquivo:\n            link_do_video = linha.strip()  # Remove espaços em branco e quebras de linha\n            baixar_video(link_do_video, arquivo_txt)\nelse:\n    print(f\"O arquivo {arquivo_txt} não foi encontrado.\")",
+        "detail": "sistema",
+        "documentation": {}
+    }
+]

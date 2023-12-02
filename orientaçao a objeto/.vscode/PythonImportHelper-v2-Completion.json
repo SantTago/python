@@ -1,0 +1,80 @@
+[
+    {
+        "label": "urllib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib",
+        "description": "urllib",
+        "detail": "urllib",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PySide.QtGui",
+        "description": "PySide.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QUrl",
+        "importPath": "PySide.QtCore",
+        "description": "PySide.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QWebView",
+        "importPath": "PySide.QtWebKit",
+        "description": "PySide.QtWebKit",
+        "isExtraImport": true,
+        "detail": "PySide.QtWebKit",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 5,
+        "importPath": "Abrir o navegador",
+        "description": "Abrir o navegador",
+        "peekOfCode": "site = str(input('Insira o site: '))\ntry:\n    site1 = urllib.request.urlopen('https://www.'+site+'/') # urlopen para abrir URL # .request protocologos de html\nexcept urllib.request.URLError: # urllib.request.URLError se o Try nao fuincionar ele chama o erro\n    print('O Site não está acessível no momento')\nelse: # se o site for aberto ele retorna\n    print('Consegui abrir o site com sucesso!')\n#OpenerDirector() #gerencia uma coleção de objetos Handler que fazem todo o trabalho real.",
+        "detail": "Abrir o navegador",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "chamados",
+        "description": "chamados",
+        "peekOfCode": "app = QApplication(sys.argv)\nb = QWebView()\nb.load(QUrl('https://youtu.be/QXG-Rsmrt4A?list=PLe1Buo9ERpeVkq-3aqxBSeriyV-didkwW'))\nb.show()\napp.exec_()",
+        "detail": "chamados",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "chamados",
+        "description": "chamados",
+        "peekOfCode": "b = QWebView()\nb.load(QUrl('https://youtu.be/QXG-Rsmrt4A?list=PLe1Buo9ERpeVkq-3aqxBSeriyV-didkwW'))\nb.show()\napp.exec_()",
+        "detail": "chamados",
+        "documentation": {}
+    }
+]

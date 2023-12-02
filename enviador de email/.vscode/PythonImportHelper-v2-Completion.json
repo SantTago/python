@@ -1,0 +1,285 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "filedialog",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "smtplib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "smtplib",
+        "description": "smtplib",
+        "detail": "smtplib",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEMultipart",
+        "importPath": "email.mime.multipart",
+        "description": "email.mime.multipart",
+        "isExtraImport": true,
+        "detail": "email.mime.multipart",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEText",
+        "importPath": "email.mime.text",
+        "description": "email.mime.text",
+        "isExtraImport": true,
+        "detail": "email.mime.text",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEApplication",
+        "importPath": "email.mime.application",
+        "description": "email.mime.application",
+        "isExtraImport": true,
+        "detail": "email.mime.application",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "twilio.rest",
+        "description": "twilio.rest",
+        "isExtraImport": true,
+        "detail": "twilio.rest",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "procurar_arquivo",
+        "kind": 2,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "def procurar_arquivo():\n    nome_arquivo = entry_nome_arquivo.get()\n    diretorio_procura = r\"C:\\\\Users\\\\mocob\\\\Desktop\"  # Substitua pelo caminho correto\n    resultados = []\n    for root, dirs, files in os.walk(diretorio_procura):\n        for arquivo in files:\n            if nome_arquivo in arquivo:\n                caminho_completo = os.path.join(root, arquivo)\n                resultados.append(caminho_completo)\n    if resultados:",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "abrir_arquivo",
+        "kind": 2,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "def abrir_arquivo():\n    selecionado = listbox_resultado.get(listbox_resultado.curselection())\n    os.startfile(selecionado)\n# Configuração da janela principal\njanela = tk.Tk()\njanela.title(\"Procurar e Abrir Arquivo\")\n# Criação de widgets\nlabel_instrucao = tk.Label(janela, text=\"Digite o nome do arquivo que deseja procurar:\")\nentry_nome_arquivo = tk.Entry(janela)\nbotao_procurar = tk.Button(janela, text=\"Procurar\", command=procurar_arquivo)",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "janela",
+        "kind": 5,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "janela = tk.Tk()\njanela.title(\"Procurar e Abrir Arquivo\")\n# Criação de widgets\nlabel_instrucao = tk.Label(janela, text=\"Digite o nome do arquivo que deseja procurar:\")\nentry_nome_arquivo = tk.Entry(janela)\nbotao_procurar = tk.Button(janela, text=\"Procurar\", command=procurar_arquivo)\nlabel_resultado = tk.Label(janela, text=\"\")\nlistbox_resultado = tk.Listbox(janela, width=100, height=20)  # Ajuste a largura e altura desejadas\nbotao_abrir = tk.Button(janela, text=\"Abrir Arquivo\", command=abrir_arquivo, state=tk.DISABLED)\n# Layout dos widgets",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "label_instrucao",
+        "kind": 5,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "label_instrucao = tk.Label(janela, text=\"Digite o nome do arquivo que deseja procurar:\")\nentry_nome_arquivo = tk.Entry(janela)\nbotao_procurar = tk.Button(janela, text=\"Procurar\", command=procurar_arquivo)\nlabel_resultado = tk.Label(janela, text=\"\")\nlistbox_resultado = tk.Listbox(janela, width=100, height=20)  # Ajuste a largura e altura desejadas\nbotao_abrir = tk.Button(janela, text=\"Abrir Arquivo\", command=abrir_arquivo, state=tk.DISABLED)\n# Layout dos widgets\nlabel_instrucao.pack()\nentry_nome_arquivo.pack()\nbotao_procurar.pack()",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "entry_nome_arquivo",
+        "kind": 5,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "entry_nome_arquivo = tk.Entry(janela)\nbotao_procurar = tk.Button(janela, text=\"Procurar\", command=procurar_arquivo)\nlabel_resultado = tk.Label(janela, text=\"\")\nlistbox_resultado = tk.Listbox(janela, width=100, height=20)  # Ajuste a largura e altura desejadas\nbotao_abrir = tk.Button(janela, text=\"Abrir Arquivo\", command=abrir_arquivo, state=tk.DISABLED)\n# Layout dos widgets\nlabel_instrucao.pack()\nentry_nome_arquivo.pack()\nbotao_procurar.pack()\nlabel_resultado.pack()",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "botao_procurar",
+        "kind": 5,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "botao_procurar = tk.Button(janela, text=\"Procurar\", command=procurar_arquivo)\nlabel_resultado = tk.Label(janela, text=\"\")\nlistbox_resultado = tk.Listbox(janela, width=100, height=20)  # Ajuste a largura e altura desejadas\nbotao_abrir = tk.Button(janela, text=\"Abrir Arquivo\", command=abrir_arquivo, state=tk.DISABLED)\n# Layout dos widgets\nlabel_instrucao.pack()\nentry_nome_arquivo.pack()\nbotao_procurar.pack()\nlabel_resultado.pack()\nlistbox_resultado.pack()",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "label_resultado",
+        "kind": 5,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "label_resultado = tk.Label(janela, text=\"\")\nlistbox_resultado = tk.Listbox(janela, width=100, height=20)  # Ajuste a largura e altura desejadas\nbotao_abrir = tk.Button(janela, text=\"Abrir Arquivo\", command=abrir_arquivo, state=tk.DISABLED)\n# Layout dos widgets\nlabel_instrucao.pack()\nentry_nome_arquivo.pack()\nbotao_procurar.pack()\nlabel_resultado.pack()\nlistbox_resultado.pack()\nbotao_abrir.pack()",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "listbox_resultado",
+        "kind": 5,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "listbox_resultado = tk.Listbox(janela, width=100, height=20)  # Ajuste a largura e altura desejadas\nbotao_abrir = tk.Button(janela, text=\"Abrir Arquivo\", command=abrir_arquivo, state=tk.DISABLED)\n# Layout dos widgets\nlabel_instrucao.pack()\nentry_nome_arquivo.pack()\nbotao_procurar.pack()\nlabel_resultado.pack()\nlistbox_resultado.pack()\nbotao_abrir.pack()\n# Executa a interface gráfica",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "botao_abrir",
+        "kind": 5,
+        "importPath": "Buscar_e_abrir_arquivos",
+        "description": "Buscar_e_abrir_arquivos",
+        "peekOfCode": "botao_abrir = tk.Button(janela, text=\"Abrir Arquivo\", command=abrir_arquivo, state=tk.DISABLED)\n# Layout dos widgets\nlabel_instrucao.pack()\nentry_nome_arquivo.pack()\nbotao_procurar.pack()\nlabel_resultado.pack()\nlistbox_resultado.pack()\nbotao_abrir.pack()\n# Executa a interface gráfica\njanela.mainloop()",
+        "detail": "Buscar_e_abrir_arquivos",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "captura",
+        "description": "captura",
+        "peekOfCode": "url = 'https://www.isabelaflores.com'\n# Enviar uma solicitação GET para a página\nresponse = requests.get(url)\n# Verificar se a solicitação foi bem-sucedida\nif response.status_code == 200:\n    # Extrair e-mails da página usando expressões regulares\n    emails = re.findall(r'\\S+@\\S+', response.text)\n    # Nome do arquivo onde você deseja armazenar os e-mails\n    nome_arquivo = 'email_cap.txt'\n    # Escrever os e-mails em um arquivo de texto",
+        "detail": "captura",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "captura",
+        "description": "captura",
+        "peekOfCode": "response = requests.get(url)\n# Verificar se a solicitação foi bem-sucedida\nif response.status_code == 200:\n    # Extrair e-mails da página usando expressões regulares\n    emails = re.findall(r'\\S+@\\S+', response.text)\n    # Nome do arquivo onde você deseja armazenar os e-mails\n    nome_arquivo = 'email_cap.txt'\n    # Escrever os e-mails em um arquivo de texto\n    with open(nome_arquivo, 'w') as file:\n        for email in emails:",
+        "detail": "captura",
+        "documentation": {}
+    },
+    {
+        "label": "email_de",
+        "kind": 5,
+        "importPath": "enviar",
+        "description": "enviar",
+        "peekOfCode": "email_de = 'mocobom09@gmail.com'  # Seu endereço de e-mail\nsenha = 'tiagoviana123'  # Sua senha de e-mail\nservidor_smtp = 'smtp.gmail.com'  # Servidor SMTP do Gmail\nporta_smtp = 587  # Porta SMTP do Gmail\n# Lista de destinatários\ndestinatarios = ['destinatario1@example.com', 'destinatario2@example.com']\n# Loop para enviar e-mails para cada destinatário\nfor destinatario in destinatarios:\n    # Criar mensagem de e-mail\n    mensagem = MIMEMultipart()",
+        "detail": "enviar",
+        "documentation": {}
+    },
+    {
+        "label": "senha",
+        "kind": 5,
+        "importPath": "enviar",
+        "description": "enviar",
+        "peekOfCode": "senha = 'tiagoviana123'  # Sua senha de e-mail\nservidor_smtp = 'smtp.gmail.com'  # Servidor SMTP do Gmail\nporta_smtp = 587  # Porta SMTP do Gmail\n# Lista de destinatários\ndestinatarios = ['destinatario1@example.com', 'destinatario2@example.com']\n# Loop para enviar e-mails para cada destinatário\nfor destinatario in destinatarios:\n    # Criar mensagem de e-mail\n    mensagem = MIMEMultipart()\n    mensagem['From'] = email_de",
+        "detail": "enviar",
+        "documentation": {}
+    },
+    {
+        "label": "servidor_smtp",
+        "kind": 5,
+        "importPath": "enviar",
+        "description": "enviar",
+        "peekOfCode": "servidor_smtp = 'smtp.gmail.com'  # Servidor SMTP do Gmail\nporta_smtp = 587  # Porta SMTP do Gmail\n# Lista de destinatários\ndestinatarios = ['destinatario1@example.com', 'destinatario2@example.com']\n# Loop para enviar e-mails para cada destinatário\nfor destinatario in destinatarios:\n    # Criar mensagem de e-mail\n    mensagem = MIMEMultipart()\n    mensagem['From'] = email_de\n    mensagem['To'] = destinatario",
+        "detail": "enviar",
+        "documentation": {}
+    },
+    {
+        "label": "porta_smtp",
+        "kind": 5,
+        "importPath": "enviar",
+        "description": "enviar",
+        "peekOfCode": "porta_smtp = 587  # Porta SMTP do Gmail\n# Lista de destinatários\ndestinatarios = ['destinatario1@example.com', 'destinatario2@example.com']\n# Loop para enviar e-mails para cada destinatário\nfor destinatario in destinatarios:\n    # Criar mensagem de e-mail\n    mensagem = MIMEMultipart()\n    mensagem['From'] = email_de\n    mensagem['To'] = destinatario\n    mensagem['Subject'] = 'Assunto do E-mail'",
+        "detail": "enviar",
+        "documentation": {}
+    },
+    {
+        "label": "destinatarios",
+        "kind": 5,
+        "importPath": "enviar",
+        "description": "enviar",
+        "peekOfCode": "destinatarios = ['destinatario1@example.com', 'destinatario2@example.com']\n# Loop para enviar e-mails para cada destinatário\nfor destinatario in destinatarios:\n    # Criar mensagem de e-mail\n    mensagem = MIMEMultipart()\n    mensagem['From'] = email_de\n    mensagem['To'] = destinatario\n    mensagem['Subject'] = 'Assunto do E-mail'\n    # Corpo do e-mail (pode ser personalizado)\n    corpo_email = \"teste -----------------------------------------------------------------.\"",
+        "detail": "enviar",
+        "documentation": {}
+    },
+    {
+        "label": "account_sid",
+        "kind": 5,
+        "importPath": "telefone",
+        "description": "telefone",
+        "peekOfCode": "account_sid = 'AC0fc951b969d51573f34e3d3b93fd9c92'\nauth_token = '132619e5010f76f13ebca09e092d1524'\n# Inicialize o cliente Twilio\nclient = Client(account_sid, auth_token)\n# Número de telefone de destino (deve incluir o código do país, por exemplo, +1 para os EUA)\nnumero_destino = '+5588993464285'  # Substitua pelo número Twilio correto\n# Mensagem que você deseja enviar\nmensagem = 'teste '\nimport time\ntime.sleep(3)",
+        "detail": "telefone",
+        "documentation": {}
+    },
+    {
+        "label": "auth_token",
+        "kind": 5,
+        "importPath": "telefone",
+        "description": "telefone",
+        "peekOfCode": "auth_token = '132619e5010f76f13ebca09e092d1524'\n# Inicialize o cliente Twilio\nclient = Client(account_sid, auth_token)\n# Número de telefone de destino (deve incluir o código do país, por exemplo, +1 para os EUA)\nnumero_destino = '+5588993464285'  # Substitua pelo número Twilio correto\n# Mensagem que você deseja enviar\nmensagem = 'teste '\nimport time\ntime.sleep(3)\n# Envie a mensagem",
+        "detail": "telefone",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "telefone",
+        "description": "telefone",
+        "peekOfCode": "client = Client(account_sid, auth_token)\n# Número de telefone de destino (deve incluir o código do país, por exemplo, +1 para os EUA)\nnumero_destino = '+5588993464285'  # Substitua pelo número Twilio correto\n# Mensagem que você deseja enviar\nmensagem = 'teste '\nimport time\ntime.sleep(3)\n# Envie a mensagem\nwhile True:\n    try:",
+        "detail": "telefone",
+        "documentation": {}
+    },
+    {
+        "label": "numero_destino",
+        "kind": 5,
+        "importPath": "telefone",
+        "description": "telefone",
+        "peekOfCode": "numero_destino = '+5588993464285'  # Substitua pelo número Twilio correto\n# Mensagem que você deseja enviar\nmensagem = 'teste '\nimport time\ntime.sleep(3)\n# Envie a mensagem\nwhile True:\n    try:\n        mensagem_enviada = client.messages.create(\n            to=numero_destino,",
+        "detail": "telefone",
+        "documentation": {}
+    },
+    {
+        "label": "mensagem",
+        "kind": 5,
+        "importPath": "telefone",
+        "description": "telefone",
+        "peekOfCode": "mensagem = 'teste '\nimport time\ntime.sleep(3)\n# Envie a mensagem\nwhile True:\n    try:\n        mensagem_enviada = client.messages.create(\n            to=numero_destino,\n            from_='+16195928748',  # Substitua por seu número Twilio (sem o \"+\")\n            body=mensagem",
+        "detail": "telefone",
+        "documentation": {}
+    }
+]

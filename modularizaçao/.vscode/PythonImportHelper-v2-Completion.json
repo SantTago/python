@@ -1,0 +1,28 @@
+[
+    {
+        "label": "numeros",
+        "importPath": "uteis",
+        "description": "uteis",
+        "isExtraImport": true,
+        "detail": "uteis",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "numeros",
+        "description": "numeros",
+        "peekOfCode": "num = int(input(\"Digite um valor: \"))\nfat = numeros.fatorial(num)\nprint(f'O fatorial de {num} é {fat}')\nprint(f'O dobro de {num} e {numeros.dobro(num)}')\n#print(f'O dobro de {num} e {uteis.triplo(num)}')",
+        "detail": "numeros",
+        "documentation": {}
+    },
+    {
+        "label": "fat",
+        "kind": 5,
+        "importPath": "numeros",
+        "description": "numeros",
+        "peekOfCode": "fat = numeros.fatorial(num)\nprint(f'O fatorial de {num} é {fat}')\nprint(f'O dobro de {num} e {numeros.dobro(num)}')\n#print(f'O dobro de {num} e {uteis.triplo(num)}')",
+        "detail": "numeros",
+        "documentation": {}
+    }
+]

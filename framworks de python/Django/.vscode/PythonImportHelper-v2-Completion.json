@@ -1,0 +1,176 @@
+[
+    {
+        "label": "django_filters",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "rest_framework",
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "isExtraImport": true,
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "Author",
+        "importPath": "myapp.models",
+        "description": "myapp.models",
+        "isExtraImport": true,
+        "detail": "myapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "GuardedModelAdmin",
+        "importPath": "guardian.admin",
+        "description": "guardian.admin",
+        "isExtraImport": true,
+        "detail": "guardian.admin",
+        "documentation": {}
+    },
+    {
+        "label": "markdown",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "markdown",
+        "description": "markdown",
+        "detail": "markdown",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "URITemplate",
+        "importPath": "uritemplate",
+        "description": "uritemplate",
+        "isExtraImport": true,
+        "detail": "uritemplate",
+        "documentation": {}
+    },
+    {
+        "label": "expand",
+        "importPath": "uritemplate",
+        "description": "uritemplate",
+        "isExtraImport": true,
+        "detail": "uritemplate",
+        "documentation": {}
+    },
+    {
+        "label": "ProductFilter",
+        "kind": 6,
+        "importPath": "django-filter",
+        "description": "django-filter",
+        "peekOfCode": "class ProductFilter(django_filters.FilterSet):\n    class Meta:\n        model = Product\n        fields = ['name', 'price', 'manufacturer']\n# \n# E então, na sua visão, você poderia fazer:\ndef product_list(request):\n    filter = ProductFilter(request.GET, queryset=Product.objects.all())\n    return render(request, 'my_app/template.html', {'filter': filter})\n# Uso com Django REST Framework",
+        "detail": "django-filter",
+        "documentation": {}
+    },
+    {
+        "label": "ProductFilter",
+        "kind": 6,
+        "importPath": "django-filter",
+        "description": "django-filter",
+        "peekOfCode": "class ProductFilter(filters.FilterSet):\n    class Meta:\n        model = Product\n        fields = ('category', 'in_stock')\n#Django-filter é um aplicativo Django reutilizável \n# que permite aos usuários adicionar filtragem dinâmica \n# de QuerySet de forma declarativa a partir de parâmetros de URL.\n#Django-Filter é um pacote maduro e estável. Ele usa um esquema de \n# versão CalVer de duas partes, como 21.1. O primeiro número é o ano. \n# O segundo é o número de lançamento naquele ano.",
+        "detail": "django-filter",
+        "documentation": {}
+    },
+    {
+        "label": "product_list",
+        "kind": 2,
+        "importPath": "django-filter",
+        "description": "django-filter",
+        "peekOfCode": "def product_list(request):\n    filter = ProductFilter(request.GET, queryset=Product.objects.all())\n    return render(request, 'my_app/template.html', {'filter': filter})\n# Uso com Django REST Framework\n# O Django-filter fornece um FilterSet customizado e back-end de\n# filtro para uso com o Django REST Framework.\n# Para usar isso, ajuste sua importação para usar django_filters.rest_framework.FilterSet.\nfrom django_filters import rest_framework as filters\nclass ProductFilter(filters.FilterSet):\n    class Meta:",
+        "detail": "django-filter",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "django-filter",
+        "description": "django-filter",
+        "peekOfCode": "INSTALLED_APPS = [\n    ...\n    'django_filters',\n]\n#Em seguida, adicione 'django_filters' ao seu INSTALLED_APPS.\n#Django-filter pode ser usado para gerar interfaces semelhantes \n# à interface list_filter do administrador do Django. Possui uma \n# API muito semelhante ao ModelForms do Django. Por exemplo, se você \n# tivesse um modelo de produto, poderia ter um conjunto de filtros para \n# ele com o código:",
+        "detail": "django-filter",
+        "documentation": {}
+    },
+    {
+        "label": "AuthorAdmin",
+        "kind": 6,
+        "importPath": "django-guardian",
+        "description": "django-guardian",
+        "peekOfCode": "class AuthorAdmin(GuardedModelAdmin):\n    pass\nadmin.site.register(Author, AuthorAdmin)",
+        "detail": "django-guardian",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "django-guardian",
+        "description": "django-guardian",
+        "peekOfCode": "INSTALLED_APPS = (\n ...\n 'guardian',\n)\n# 2 Adicione back-end de autorização extra ao seu settings.py:\nAUTHENTICATION_BACKENDS = (\n    'django.contrib.auth.backends.ModelBackend', # default\n    'guardian.backends.ObjectPermissionBackend',\n)\n# 3 Crie guardiantabelas de banco de dados executando:",
+        "detail": "django-guardian",
+        "documentation": {}
+    },
+    {
+        "label": "AUTHENTICATION_BACKENDS",
+        "kind": 5,
+        "importPath": "django-guardian",
+        "description": "django-guardian",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = (\n    'django.contrib.auth.backends.ModelBackend', # default\n    'guardian.backends.ObjectPermissionBackend',\n)\n# 3 Crie guardiantabelas de banco de dados executando:\npython manage.py migrar\n#Uso\n#Após a instalação e os ganchos do projeto, podemos finalmente \n# usar as permissões de objeto com o Django .\n# Vamos começar bem rápido:.",
+        "detail": "django-guardian",
+        "documentation": {}
+    },
+    {
+        "label": "html",
+        "kind": 5,
+        "importPath": "Markdown",
+        "description": "Markdown",
+        "peekOfCode": "html = markdown.markdown(your_text_string)\n# Markdown (3.0.0+) - Suporte Markdown para a API navegável.",
+        "detail": "Markdown",
+        "documentation": {}
+    },
+    {
+        "label": "GitHubUser",
+        "kind": 6,
+        "importPath": "requests",
+        "description": "requests",
+        "peekOfCode": "class GitHubUser(object):\n    url = URITemplate('https://api.github.com/user{/login}')\n    def __init__(self, name):\n        self.api_url = url.expand(login=name)\n        response = requests.get(self.api_url)\n        if response.status_code == 200:\n            self.__dict__.update(response.json())\n#\n#Quando o módulo que contém essa classe \n# é carregado, o GitHubUser.url é avaliado ",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "gist_uri",
+        "kind": 5,
+        "importPath": "URI_Templates.",
+        "description": "URI_Templates.",
+        "peekOfCode": "gist_uri = 'https://api.github.com/users/sigmavirus24/gists{/gist_id}'\nt = URITemplate(gist_uri)\nprint(t.expand(gist_id='123456'))\n# => https://api.github.com/users/sigmavirus24/gists/123456\n# or\nprint(expand(gist_uri, gist_id='123456'))\n# also\nt.expand({'gist_id': '123456'})\nprint(expand(gist_uri, {'gist_id': '123456'}))",
+        "detail": "URI_Templates.",
+        "documentation": {}
+    },
+    {
+        "label": "t",
+        "kind": 5,
+        "importPath": "URI_Templates.",
+        "description": "URI_Templates.",
+        "peekOfCode": "t = URITemplate(gist_uri)\nprint(t.expand(gist_id='123456'))\n# => https://api.github.com/users/sigmavirus24/gists/123456\n# or\nprint(expand(gist_uri, gist_id='123456'))\n# also\nt.expand({'gist_id': '123456'})\nprint(expand(gist_uri, {'gist_id': '123456'}))",
+        "detail": "URI_Templates.",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "label": "uteis",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uteis",
+        "description": "uteis",
+        "detail": "uteis",
+        "documentation": {}
+    },
+    {
+        "label": "num",
+        "kind": 5,
+        "importPath": "numeros",
+        "description": "numeros",
+        "peekOfCode": "num = int(input(\"Digite um valor: \"))\nfat = uteis.fatorial(num)\nprint(f'O fatorial de {num} é {fat}')\nprint(f'O dobro de {num} e {uteisdobro(num)}')\n#print(f'O dobro de {num} e {uteis.triplo(num)}')",
+        "detail": "numeros",
+        "documentation": {}
+    },
+    {
+        "label": "fat",
+        "kind": 5,
+        "importPath": "numeros",
+        "description": "numeros",
+        "peekOfCode": "fat = uteis.fatorial(num)\nprint(f'O fatorial de {num} é {fat}')\nprint(f'O dobro de {num} e {uteisdobro(num)}')\n#print(f'O dobro de {num} e {uteis.triplo(num)}')",
+        "detail": "numeros",
+        "documentation": {}
+    },
+    {
+        "label": "fatorial",
+        "kind": 2,
+        "importPath": "uteis",
+        "description": "uteis",
+        "peekOfCode": "def fatorial(n): # from uteis import dobro, fatorial \n    f = 1\n    for c in range(1, n+1): # ver pq precisa do +1\n        f *= c\n    return f\ndef dobro(n):\n    return n * 2\ndef triplo(n):\n    return n * 3",
+        "detail": "uteis",
+        "documentation": {}
+    },
+    {
+        "label": "dobro",
+        "kind": 2,
+        "importPath": "uteis",
+        "description": "uteis",
+        "peekOfCode": "def dobro(n):\n    return n * 2\ndef triplo(n):\n    return n * 3",
+        "detail": "uteis",
+        "documentation": {}
+    },
+    {
+        "label": "triplo",
+        "kind": 2,
+        "importPath": "uteis",
+        "description": "uteis",
+        "peekOfCode": "def triplo(n):\n    return n * 3",
+        "detail": "uteis",
+        "documentation": {}
+    }
+]

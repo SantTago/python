@@ -1,0 +1,11 @@
+[
+    {
+        "label": "exe",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "exe",
+        "description": "exe",
+        "detail": "exe",
+        "documentation": {}
+    }
+]
